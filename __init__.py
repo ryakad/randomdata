@@ -9,4 +9,4 @@
 # Author: Ryan Kadwell <ryan@riaka.ca>
 #
 
-"""init file for Dynamo"""
+"""init file for Random Data"""
