@@ -31,21 +31,24 @@ class Generator:
         chars.
         """
 
-        if length == 0:
-            return self.words
-        else:
-            return [word for word in self.words if len(word) == length]
+        words = self.words[:]
+        random.shuffle(words)
 
-    def make_string(self, length=0):
+        if length == 0:
+            return words
+        else:
+            return [word for word in words if len(word) == length]
+
+    def make_string(self, total_words=0):
         """
         Returns a random string with a given number of words. Uses a
         dictionary to get more easily searchable text.
         """
 
-        if length == 0:
-            length = random.randint(1, 15)
+        if total_words == 0:
+            total_words = random.randint(1, 15)
 
-        return self.get_random_word(self._get_words(length))
+        return ' '.join(self._get_words()[:total_words-1])
 
     def make_text(self, length=100):
         """
@@ -54,7 +57,7 @@ class Generator:
 
         text = ''
         while True:
-            word = self.get_random_word(self.words)
+            word = self.get_random_word(self._get_words())
             text += word
             text += ' '
 
@@ -73,12 +76,13 @@ class Generator:
     def get_random_word(self, words):
         """Returns a random word from within a list"""
 
-        total_words = len(words) - 1
-
-        return words[random.randint(0, total_words)]
+        return words[random.randint(0, len(words) - 1)]
 
     def make_integer(self, length=5):
         """Returns a random positive integer of a specific length"""
+
+        if length < 1:
+            return 0
 
         lowerpoint = '1' + ('0' * (length - 1))
         upperpoint = '9' * length
