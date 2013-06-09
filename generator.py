@@ -89,13 +89,13 @@ class Generator:
 
         return random.randint(int(lowerpoint), int(upperpoint))
 
-    def make_float(self, pricision=2, length=3):
+    def make_float(self, precision=2, length=3):
         """Returns a random floating point number"""
 
         base = self.make_integer(length)
-        fractal = float(self.make_integer(2)) / (10 ** pricision)
+        fractal = float(self.make_integer(2)) / (10 ** precision)
 
-        return round(base + fractal, pricision)
+        return round(base + fractal, precision)
 
     def make_id(self):
         """Simulate an auto incrementing id"""
