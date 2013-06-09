@@ -40,6 +40,10 @@ class GeneratorTestCase(unittest.TestCase):
         integer = self.generator.make_integer(-1)
         self.assertEquals(0, integer)
 
+    def test_make_id_increments(self):
+        self.assertEquals(1, self.generator.make_id())
+        self.assertEquals(2, self.generator.make_id())
+        self.assertEquals(3, self.generator.make_id())
 
 if __name__ == "__main__":
    unittest.main()
