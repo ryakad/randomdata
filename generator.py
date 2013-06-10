@@ -22,7 +22,9 @@ class Generator:
         # for make_id()
         self.id = 0
         dictfile = os.path.dirname(__file__) + "/data/dict.txt"
+        namefile = os.path.dirname(__file__) + "/data/names.txt"
         self.words = [word.strip() for word in open(dictfile)]
+        self.names = [name[0].upper() + name[1:].lower() for name in open(namefile)]
 
     def _get_words(self, length=0):
         """
