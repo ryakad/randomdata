@@ -1,6 +1,8 @@
 Random Data
 ===========
 
+[![Build Status](https://secure.travis-ci.org/ryakad/randomdata.png)](http://travis-ci.org/ryakad/randomdata)
+
 This is a simple random data generator written in python.
 
 Example Usage:
