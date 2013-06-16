@@ -45,5 +45,11 @@ class GeneratorTestCase(unittest.TestCase):
         self.assertEquals(2, self.generator.make_id())
         self.assertEquals(3, self.generator.make_id())
 
+    def test_make_name_returns_random_namesa(self):
+        name1 = self.generator.make_name()
+        name2 = self.generator.make_name()
+
+        self.assertNotEquals(name1, name2)
+
 if __name__ == "__main__":
    unittest.main()

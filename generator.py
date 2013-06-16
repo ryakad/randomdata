@@ -80,6 +80,10 @@ class Generator:
 
         return words[random.randint(0, len(words) - 1)]
 
+    def make_name(self):
+        """Returns a random name"""
+        return self.names[random.randint(0, len(self.names) - 1)]
+
     def make_integer(self, length=5):
         """Returns a random positive integer of a specific length"""
 
